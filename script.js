@@ -2,7 +2,7 @@ let taskInput = document.querySelector(".inputTask");
 let button = document.getElementById("button");
 let listExist = false;
 
-const taskInputValues = [];
+const taskInputValues = JSON.parse(localStorage.getItem('ToDoList')) || [];
 
 button.addEventListener("click", function() {
     taskInputValues.push(taskInput.value);
@@ -13,35 +13,26 @@ button.addEventListener("click", function() {
 });
 
 const createToDoList = (ol, output) => {
-    console.log("I'm in createToDoList")
     output.appendChild(ol);
     return true;
 
 };
 
 const createListItemValue = (ol) => {
-    console.log("I'm in createListItemValue")
-
-    for (let i = 0; i < localStorage.length; i++) {
-        let storageKey = localStorage.key(i)
-
-        if (storageKey.startsWith('ToDoList_')) {
-            let listItemValue = localStorage.getItem(storageKey);
-            let li = document.createElement('li');
-            li.textContent = listItemValue;
-
-            createListItem(ol,li);
-        }
-    }
+    taskInputValues.forEach(task => {
+        let li = document.createElement('li');
+        li.textContent = task;
+        createListItem(ol, li);
+    });
 };
 
-const createListItem = (li) => {
+const createListItem = (ol, li) => {
     ol.appendChild(li);
 };
 
 const renderToDoList = () => {
     let output = document.getElementById('output')
-    const ol = document.createElement('ol');
+    let ol = document.createElement('ol');
     if (listExist !== true) {
         listExist = createToDoList(ol, output)
     }
