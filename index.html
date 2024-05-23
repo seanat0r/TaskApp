@@ -16,7 +16,18 @@
             <form action="index.html">
                 <input type="text" class="inputTask">
             </form>
-            <button id="button">Save</button>
+        </div>
+        <div class="taskOptionAdding">
+            <button id="button">Add a Task</button>
+            <button id="showTask">Reload</button>
+        </div>
+        <div class="taskOptionRemoving">
+            <form id="taskDeleteForm" action="index.html">
+                <label for="taskNumber">Task Number Deleting:</label>
+                <input type="number" min="1" name="taskNumber" id="taskNumber">
+                <input type="submit" value="Delet Task">
+                <button id="deleteAll">Delet All</button>
+            </form>
         </div>
         <div id="output">
             

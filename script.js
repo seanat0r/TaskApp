@@ -1,9 +1,13 @@
 let taskInput = document.querySelector(".inputTask");
 let button = document.getElementById("button");
-let listExist = false;
+let deleteAll = document.getElementById("deleteAll");
+let showTask = document.getElementById('showTask');
 
 const taskInputValues = JSON.parse(localStorage.getItem('ToDoList')) || [];
 
+
+
+//Adding a Task
 button.addEventListener("click", function() {
     taskInputValues.push(taskInput.value);
     localStorage.setItem('ToDoList', JSON.stringify(taskInputValues));
@@ -12,6 +16,12 @@ button.addEventListener("click", function() {
     renderToDoList();
 });
 
+addEventListener('DOMContentLoaded', function() {
+    renderToDoList();
+});
+
+
+//Show the Task list
 const createToDoList = (ol, output) => {
     output.appendChild(ol);
     return true;
@@ -32,10 +42,43 @@ const createListItem = (ol, li) => {
 
 const renderToDoList = () => {
     let output = document.getElementById('output')
+    output.innerHTML = "";
     let ol = document.createElement('ol');
-    if (listExist !== true) {
-        listExist = createToDoList(ol, output)
-    }
-    createListItemValue(ol)
+
+    createToDoList(ol, output);
+    
+    createListItemValue(ol);
     
 };
+
+//Remove all Task
+deleteAll.addEventListener("click", function(){
+    if (taskInputValues.length > 0) {
+        localStorage.removeItem('ToDoList');
+
+        taskInputValues.length = 0;
+
+        renderToDoList();
+    }
+});
+
+//When submit to delet a task, prevent submiting the normal behavior
+document.getElementById('taskDeleteForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    handleSubmit();
+});
+
+//Remove one Task
+const handleSubmit = () => {
+    let taskNumber = document.getElementById('taskNumber').value;
+    console.log('Output from form: '+ taskNumber);
+    taskNumber -= 1;
+    console.log(taskNumber);
+
+};
+
+//Reload Task List
+showTask.addEventListener('click', function() {
+    renderToDoList();
+});
