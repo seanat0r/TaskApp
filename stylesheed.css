@@ -1,0 +1,61 @@
+/* Universall */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+/* Task-Input */
+#button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+.NextLine {
+    display: flex;
+    margin: 0.5rem;
+}
+#submitTask {
+    height: 3rem;
+    width: 5rem;
+}
+/* Task-Delete */
+#taskDeleteForm {
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+#taskNumber {
+    margin: 0.5rem;
+}
+
+#deleteTask {
+    height: 3rem;
+    width: 5rem;
+}
+
+/* Other Options */
+.otherOptions {
+    display: flex;
+    justify-content: center;
+}
+#showTask, #deleteAll {
+    margin: 0.5rem;
+    height: 3rem;
+    width: 5rem;
+}
+
+/* Output */
+#output {
+    display: flex;
+    justify-content: center;
+}
+/* Footer */
