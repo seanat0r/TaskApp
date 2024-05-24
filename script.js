@@ -8,13 +8,13 @@ const taskInputValues = JSON.parse(localStorage.getItem('ToDoList')) || [];
 
 
 //Adding a Task
-button.addEventListener("click", function() {
+const addingATask = () => {
     taskInputValues.push(taskInput.value);
     localStorage.setItem('ToDoList', JSON.stringify(taskInputValues));
     taskInput.value = "";
     console.log("Saved values: ", taskInputValues);
     renderToDoList();
-});
+};
 
 addEventListener('DOMContentLoaded', function() {
     renderToDoList();
@@ -61,8 +61,11 @@ deleteAll.addEventListener("click", function(){
         renderToDoList();
     }
 });
-document.getElementById('butto').addEventListener('submit', function(event) {
+document.getElementById('button').addEventListener('submit', function(event) {
     event.preventDefault();
+
+    addingATask();
+});
 
 //When submit to delet a task, prevent submiting the normal behavior
 document.getElementById('taskDeleteForm').addEventListener('submit', function(event) {
