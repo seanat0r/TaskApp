@@ -13,21 +13,28 @@
     </header>
     <main>
         <div id="input">
-            <form action="index.html">
-                <input type="text" class="inputTask">
+            <form id="button" action="index.html">
+                <input type="text" class="inputTask" name="inputTask" value="Type a task in it ...">
+                <div class="NextLine">
+                    <input type="submit" value="Add a Task">
+                </div>
             </form>
         </div>
         <div class="taskOptionAdding">
-            <button id="button">Add a Task</button>
-            <button id="showTask">Reload</button>
+            
         </div>
         <div class="taskOptionRemoving">
             <form id="taskDeleteForm" action="index.html">
                 <label for="taskNumber">Task Number Deleting:</label>
                 <input type="number" min="1" name="taskNumber" id="taskNumber">
-                <input type="submit" value="Delet Task">
-                <button id="deleteAll">Delet All</button>
+                <div class="nextLine">
+                    <input type="submit" value="Delet Task">
+                </div>
             </form>
+        </div>
+        <div class="otherOptions">
+            <button id="showTask">Reload</button>
+            <button id="deleteAll">Delet All</button>
         </div>
         <div id="output">
             

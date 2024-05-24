@@ -61,6 +61,8 @@ deleteAll.addEventListener("click", function(){
         renderToDoList();
     }
 });
+document.getElementById('butto').addEventListener('submit', function(event) {
+    event.preventDefault();
 
 //When submit to delet a task, prevent submiting the normal behavior
 document.getElementById('taskDeleteForm').addEventListener('submit', function(event) {
@@ -69,6 +71,26 @@ document.getElementById('taskDeleteForm').addEventListener('submit', function(ev
     handleSubmit();
 });
 
+const getToDoListArrayIndex = (taskNumber) => {
+
+    taskInputValues.find((value, index) => {
+        console.log('Im OUTSIDE from if')
+        if (index == taskNumber) {
+            console.log('Im in the if')
+            deletToDoListArrayIndex(index);
+        };
+    });
+};
+
+const deletToDoListArrayIndex = (index) => {
+    console.log('Im in the delet')
+    taskInputValues.splice(index, 1);
+};
+
+const updateToDoListArray = () => {
+    renderToDoList();
+};
+
 //Remove one Task
 const handleSubmit = () => {
     let taskNumber = document.getElementById('taskNumber').value;
@@ -76,6 +98,9 @@ const handleSubmit = () => {
     taskNumber -= 1;
     console.log(taskNumber);
 
+    getToDoListArrayIndex(taskNumber);
+    
+    updateToDoListArray();
 };
 
 //Reload Task List
