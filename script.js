@@ -112,13 +112,24 @@ showTask.addEventListener('click', function() {
 });
 
 //numPad
-let numPad = document.getElementById('numPad');
+const numPadOnOff = () => {
+    let numPad = document.getElementById('numPad');
+    let taskNumberPAD = document.getElementById('taskNumber')
 
-const gotClickedNumPad = () => {
-    let taskNumberPAD = document.getElementsByClassName(taskNumberPAD)
-
-    taskNumberPAD.addEventListener('click', function() {
-        numPad.style.display('grid');
-    });
-};
-gotClickedNumPad();
+    const gotClickedNumPad = () => {
+    
+        taskNumberPAD.addEventListener('click', function() {
+            numPad.style.display = 'grid';
+        });
+    };
+    const disableNumPad = () => {
+        document.addEventListener('click', (event) => {
+            if (!taskNumberPAD.contains(event.target) && !numPad.contains(event.target)) {
+            numPad.style.display = 'none';
+            }
+        })
+    }
+    gotClickedNumPad();
+    disableNumPad();
+}
+numPadOnOff();
