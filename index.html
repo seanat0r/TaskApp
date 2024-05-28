@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/stylesheed.css">
+    <link rel="stylesheet" href="stylesheed.css">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -16,19 +16,36 @@
             <form id="button" action="index.html">
                 <input type="text" class="inputTask" name="inputTask" value="Type a task in it ...">
                 <div class="NextLine">
-                    <input type="submit" value="Add a Task">
+                    <input type="submit" value="Add a Task" id="submitTask">
                 </div>
             </form>
-        </div>
-        <div class="taskOptionAdding">
-            
         </div>
         <div class="taskOptionRemoving">
             <form id="taskDeleteForm" action="index.html">
                 <label for="taskNumber">Task Number Deleting:</label>
                 <input type="number" min="1" name="taskNumber" id="taskNumber">
+                <div class="numberPad">
+                    <div class="firstRow123 row">
+                        <p class="number" id="1">1</p>
+                        <p class="number" id="2">2</p>
+                        <p class="number" id="3">3</p>
+                    </div>
+                    <div class="secondRow456 row">
+                        <p class="number" id="4">4</p>
+                        <p class="number" id="5">5</p>
+                        <p class="number" id="6">6</p>
+                    </div>
+                    <div class="thirdRow789 row">
+                        <p class="number" id="7">7</p>
+                        <p class="number" id="8">8</p>
+                        <p class="number" id="9">9</p>
+                    </div>
+                    <div class="fourthRow0">
+                        <p class="number" id="0">0</p>
+                    </div>
+                </div>
                 <div class="nextLine">
-                    <input type="submit" value="Delet Task">
+                    <input type="submit" value="Delet Task" id="deleteTask">
                 </div>
             </form>
         </div>
