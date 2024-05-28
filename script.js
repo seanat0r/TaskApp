@@ -110,3 +110,15 @@ const handleSubmit = () => {
 showTask.addEventListener('click', function() {
     renderToDoList();
 });
+
+//numPad
+let numPad = document.getElementById('numPad');
+
+const gotClickedNumPad = () => {
+    let taskNumberPAD = document.getElementsByClassName(taskNumberPAD)
+
+    taskNumberPAD.addEventListener('click', function() {
+        numPad.style.display('grid');
+    });
+};
+gotClickedNumPad();

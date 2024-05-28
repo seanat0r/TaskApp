@@ -91,6 +91,9 @@ input[type=number] {
     padding: 0.2rem;
 }
 /* NumberPad */
+#numPad {
+    display: none;
+}
 .numberPad {
     width: 318px;
     margin: 1rem;
