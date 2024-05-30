@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
     <title>Document</title>
     <link rel="stylesheet" href="stylesheed.css">
     <script src="script.js" defer></script>
@@ -23,8 +24,8 @@
         <div class="taskOptionRemoving">
             <form id="taskDeleteForm" action="index.html">
                 <label for="taskNumber">Task Number Deleting:</label>
-                <input type="number" min="1" name="taskNumber" id="taskNumber">
-                <div class="numberPad">
+                <input type="number" min="1" name="taskNumber" id="taskNumber" class="taskNumberPAD">
+                <div class="numberPad" id="numPad">
                     <div class="firstRow123 row">
                         <p class="number" id="1">1</p>
                         <p class="number" id="2">2</p>
@@ -43,6 +44,7 @@
                     <div class="fourthRow0">
                         <p class="number" id="0">0</p>
                     </div>
+                    <img src="img/del.png" alt="del-key" class="deletekey" id="delteButtonNumPad">
                 </div>
                 <div class="nextLine">
                     <input type="submit" value="Delet Task" id="deleteTask">
@@ -53,9 +55,12 @@
             <button id="showTask">Reload</button>
             <button id="deleteAll">Delet All</button>
         </div>
-        <div id="output">
+        <div class="position">        
+            <div id="output">
             
+            </div>
         </div>
+
     </main>
 </body>
 </html>
