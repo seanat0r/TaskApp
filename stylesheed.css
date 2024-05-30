@@ -143,7 +143,22 @@ input[type=number] {
     color: #121212;
     border-radius: 15px;
 }
-
+.deletekey {
+    height: 3rem;
+    width: auto;
+    position: relative;
+    right: -210%;
+    top: 0%;
+    padding: 1rem 2rem;
+    border: 1px solid #114e84;
+    border-radius: 15px;
+}
+.deletekey:hover {
+    background-color: #c1c1c1;
+}
+.deletekey:active {
+    background-color: #6c6b6b;
+}
 /* Other Options */
 .otherOptions {
     display: flex;
@@ -160,8 +175,32 @@ input[type=number] {
 }
 
 /* Output */
-#output {
+.position {
     display: flex;
     justify-content: center;
 }
+#output {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    border: 4px dotted #114e84;
+    width: 50%;
+    height: 26rem;
+    padding: 2rem;
+    overflow: auto;
+}
+#output>ol {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style-type: decimal;
+}
+#output>ol>li {
+    flex: 1 1 25%;
+    margin: 0.1rem;
+    max-height: 2rem;
+}
+
 /* Footer */
